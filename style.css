@@ -51,7 +51,7 @@ header {
 
 .bi-search {
     cursor: pointer;
-    font-size: 15px;
+    font-size: 15px !important;
 }
   
 .logo {
@@ -110,6 +110,7 @@ nav {
     padding-top: 40px;
     font-size: 14px;
     border-bottom: 1px solid black;
+    white-space: nowrap;
 }
   
 nav a {
@@ -348,7 +349,7 @@ main {
 }
   
 .sidebar-podcast.left {
-    color: #12B6D1;
+    color: #066d7d;
     border: none;
 }
   
@@ -870,6 +871,10 @@ footer {
     transition: opacity 0.2s ease;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 @media screen and (max-width: 960px) {
     
     .top-left a:not(.bi-list),
@@ -927,6 +932,7 @@ footer {
     .bits {
         margin-top: 30px; 
         padding: 0 20px 15px; 
+        font-size: 12px;
     }
 
     .bits-top {
@@ -944,7 +950,7 @@ footer {
         flex: 0 0 auto;
         min-width: 120px;
         max-width: 160px;
-        height: 60px;
+        height: 120px;
         padding: 5px;
         box-sizing: border-box;
         display: flex;
@@ -1107,6 +1113,11 @@ footer {
 }  
 
 @media screen and (max-width: 840px) {
+
+    .bits {
+        font-size: 12px;
+    }
+
     .main-article {
       flex-direction: column;
     }
@@ -1144,7 +1155,7 @@ footer {
 @media screen and (max-width: 1300px) {
     .logo .il {
         font-size: 22px; 
-        padding-top: 30px;
+        padding-top: 35px;
     }
 
     .logo .post {
@@ -1176,7 +1187,7 @@ footer {
 
     .logo .il {
         font-size: 18px;
-        padding-top: 20px;
+        padding-top: 29px;
     }
 
     .logo .post {
@@ -1210,18 +1221,19 @@ footer {
     .bits-news a {
         min-width: 100px;
         max-width: 140px;
-        height: 50px;
+        height: 120px;
     }
 }
 
 @media screen and (max-width: 600px) {
+
     header {
         padding: 0 10px; 
     }
 
     .logo .il {
         font-size: 14px;
-        padding-top: 10px;
+        padding-top: 23px;
     }
 
     .logo .post {
@@ -1243,16 +1255,36 @@ footer {
         gap: 5px;
     }
 
-    .bits-news {
-        display: flex;
-        flex-wrap: wrap;  
-        gap: 10px;
+    .bits {
+        font-size: 12px;
     }
 
+    .bits-news {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 10px;
+        padding-bottom: 10px;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+    
     .bits-news a {
-        min-width: 80px;
-        max-width: 120px;
-        height: 40px;
+        flex: 0 0 auto;
+        min-width: 100px;
+        max-width: 130px;
+        padding: 8px 6px;
+        height: 120px;
+        font-size: 13px;
+        line-height: 1.2;
+        white-space: normal;
+        scroll-snap-align: start;
+        background: white;
+        box-sizing: border-box;
+    }
+    
+    .bits-news::-webkit-scrollbar {
+        display: none;
     }
 
     .main-article {
