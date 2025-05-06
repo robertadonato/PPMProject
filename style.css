@@ -1127,7 +1127,7 @@ footer {
     }
   
     .main-article .text {
-      order: 2; /* h2 va sotto il p */
+      order: 2;
     }
   
     .main-article .text h2 {
@@ -1180,9 +1180,16 @@ footer {
 @media screen and (max-width: 1024px) {
     .top-left a:not(.bi-list),
     .top-right a:not(.bi-person),
-    .bi-search,
-    .abbonati-btn {
+    .bi-search {
         display: none;  
+    }
+
+    .top-right .abbonati-btn {
+        display: none;
+    }
+
+    .footer-right .abbonati-btn {
+        display: inline-block;
     }
 
     .logo .il {
