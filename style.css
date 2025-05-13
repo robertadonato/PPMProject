@@ -183,6 +183,16 @@ main {
 .main-article .text {
     flex: 1;
 }
+
+.main-article .text a {
+    color: black;
+    text-decoration: none;
+}
+
+.text a:hover {
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
   
 .main-article .text h2 {
     font-size: 30px;
@@ -193,7 +203,7 @@ main {
 .main-article .text p {
     font-size: 14px;
     font-weight: 500;
-    color: #505050;
+    color: #353535;
     margin-right: 10px;
     margin-top: 5px;
 }
@@ -237,13 +247,26 @@ main {
     align-items: flex-start; 
     padding-top: 20px;
     gap: 20px;
-    border-top: 1px solid #dddddd;
+}
+
+.secondary-article:not(:first-child) {
+    border-top: 1px solid black;
 }
   
 .secondary-article img {
     height: auto;
     object-fit: cover;
     align-items: flex-end;
+}
+
+.secondary-article .text a {
+    color: black;
+    text-decoration: none;
+}
+
+.text a:hover {
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
 }
   
 .text h2 {
@@ -282,6 +305,47 @@ main {
 .text h3 {
     font-size: 14px;
     margin: 0;
+}
+
+.virgolette-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    margin: 10px 0;
+    border-top: 1px solid black;
+    padding-top: 50px;
+}
+ 
+.label {
+    display: inline-block;
+    background-color: #ffe342;
+    color: #000;
+    font-weight: bold;
+    padding: 2px 70px;
+    font-style: italic;
+    font-size: 16px;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+  
+.quote {
+    font-size: 32px;
+    margin: 20px 0 10px;
+    font-weight: normal;
+    color: black;
+    text-decoration: none;
+}
+  
+.quote:hover {
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+
+.author {
+    font-size: 14px;
+    color: #585858;
 }
 
 .sidebar-section {
@@ -556,7 +620,7 @@ main {
 }
   
 .peanuts-container img {
-    width: 950px;
+    width: 90%;
     height: 275px;
     object-fit: cover;
 }
@@ -614,7 +678,7 @@ main {
 }
   
 .prime-container img {
-    width: 950px;
+    width: 90%;
     height: 275px;
     object-fit: cover;
 }
@@ -776,8 +840,8 @@ main {
     align-items: center;
     justify-content: center;
     gap: 15px;
-    width: 70px;
-    height: 10vw;
+    width: 15%;
+    height: 50%;
     text-align: center;
     text-decoration: none;
 }
@@ -996,6 +1060,10 @@ footer {
     .text p {
         font-size: 14px;
     }
+
+    .quote {
+    font-size: 22px;
+    }
     
     .podcast-item {
         flex-direction: row;
@@ -1069,10 +1137,15 @@ footer {
     }
 
     .photo-overlay {
-        height: 14vw;
+        height: auto;
+        font-size: 12px;
+        max-width: 90%;
+        padding: 4px 6px;
     }
 
     .photo-card {
+        position: relative;
+        flex-direction: column;
         flex: 1 1 100%;
         max-width: 100%;
     }
@@ -1127,7 +1200,7 @@ footer {
     }
   
     .main-article .text {
-      order: 2; /* h2 va sotto il p */
+      order: 2;
     }
   
     .main-article .text h2 {
@@ -1150,7 +1223,6 @@ footer {
       height: auto;
     }
 }
-
 
 @media screen and (max-width: 1300px) {
     .logo .il {
@@ -1175,14 +1247,28 @@ footer {
         padding: 5px 20px;
         font-size: 14px;
     }
+
+    .peanuts-box,
+    .prime-box {
+        width: 100vw;
+        max-width: none;
+        margin-left: calc(-50vw + 50%);
+    }
 }
 
 @media screen and (max-width: 1024px) {
     .top-left a:not(.bi-list),
     .top-right a:not(.bi-person),
-    .bi-search,
-    .abbonati-btn {
+    .bi-search {
         display: none;  
+    }
+
+    .top-right .abbonati-btn {
+        display: none;
+    }
+
+    .footer-right .abbonati-btn {
+        display: inline-block;
     }
 
     .logo .il {
